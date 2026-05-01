@@ -1,0 +1,11 @@
+{
+  "endpoint": "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse",
+  "mode": "no-cors",
+  "fields": {
+    "name": "entry.XXXXX1",
+    "email": "entry.XXXXX2",
+    "phone": "entry.XXXXX3",
+    "eventDate": "entry.XXXXX4",
+    "message": "entry.XXXXX5"
+  }
+}
