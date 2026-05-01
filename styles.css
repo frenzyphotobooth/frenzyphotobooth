@@ -292,11 +292,12 @@ img { max-width: 100%; display: block; }
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  padding: 120px 24px 80px;
+  padding: 100px 24px 40px;
   overflow: hidden;
   background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 60%),
               radial-gradient(ellipse at 80% 50%, rgba(244,63,94,0.08) 0%, transparent 50%),
@@ -309,7 +310,7 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-.hero-content { max-width: 800px; position: relative; z-index: 1; }
+.hero-content { max-width: 900px; width: 100%; position: relative; z-index: 1; padding: 0 24px; }
 
 .hero-tagline {
   display: inline-block;
@@ -327,7 +328,7 @@ img { max-width: 100%; display: block; }
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   font-weight: 900;
 }
 
@@ -342,11 +343,11 @@ img { max-width: 100%; display: block; }
   font-size: 1.15rem;
   color: var(--text-muted);
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
   line-height: 1.8;
 }
 
-.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
 
 .hero-stats {
   display: flex;
@@ -367,10 +368,8 @@ img { max-width: 100%; display: block; }
 .stat-label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -380,6 +379,9 @@ img { max-width: 100%; display: block; }
   letter-spacing: 2px;
   text-transform: uppercase;
   animation: float 2s ease-in-out infinite;
+  cursor: pointer;
+  z-index: 1;
+  text-decoration: none;
 }
 
 .scroll-arrow {
@@ -391,12 +393,33 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* ===== SECTIONS ===== */
 .section { padding: 100px 0; }
+
+/* ===== VIDEO SECTION ===== */
+.hero-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 landscape */
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.hero-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .section-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
 .section-tag {
   display: inline-block;
@@ -765,6 +788,9 @@ img { max-width: 100%; display: block; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
   .gallery-item.large { grid-column: span 2; }
   .booking-grid { grid-template-columns: 1fr; }
+  .booking-form-wrapper { overflow: hidden; }
+  .custom-form { padding: 28px 20px; }
+  .form-container { border-radius: 12px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -777,6 +803,20 @@ img { max-width: 100%; display: block; }
   .testimonial-card { padding: 28px 20px; }
   .footer-grid { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
+
+  .booking { padding: 40px 0; }
+  .booking-grid { gap: 32px; }
+  .booking-info { text-align: center; }
+  .contact-details { align-items: center; }
+  .contact-item { flex-direction: column; text-align: center; gap: 8px; }
+  .social-links { justify-content: center; }
+  .custom-form { padding: 24px 16px; }
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+  .form-title { font-size: 1.4rem; }
+  .btn-submit { padding: 14px; font-size: 1rem; }
 }
 
 /* ===== GALLERY ===== */
@@ -957,6 +997,11 @@ img { max-width: 100%; display: block; }
   color: white;
 }
 
+.booking-form-wrapper {
+  min-width: 0;
+  overflow: hidden;
+}
+
 .form-container {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -995,6 +1040,7 @@ img { max-width: 100%; display: block; }
 .form-group input,
 .form-group textarea {
   width: 100%;
+  max-width: 100%;
   padding: 14px 16px;
   background: var(--bg);
   border: 1px solid var(--border);
@@ -1004,6 +1050,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.95rem;
   transition: var(--transition);
   outline: none;
+  box-sizing: border-box;
 }
 
 .form-group input::placeholder,
