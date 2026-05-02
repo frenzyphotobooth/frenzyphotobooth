@@ -402,35 +402,37 @@
           <p class="section-tag">Book Now</p>
           <h2 class="section-title">Ready to <span class="gradient-text">Party?</span></h2>
           <p>Fill out the form and we'll get back to you within 24 hours with availability and a custom quote for your event.</p>
-          <div class="booking-form-wrapper">
-            <div class="form-container custom-form">
-              <h3 class="form-title">Contact Us</h3>
-              <form id="bookingForm" novalidate>
-                <div class="form-group">
-                  <label for="form-name">Name <span class="required">*</span></label>
-                  <input type="text" id="form-name" name="name" required placeholder="Your full name">
-                </div>
-                <div class="form-group">
-                  <label for="form-email">Email <span class="required">*</span></label>
-                  <input type="email" id="form-email" name="email" required placeholder="you@example.com">
-                </div>
-                <div class="form-group">
-                  <label for="form-phone">Phone <span class="required">*</span></label>
-                  <input type="tel" id="form-phone" name="phone" required placeholder="(720) 000-0000">
-                </div>
-                <div class="form-group">
-                  <label for="form-date">Event Date <span class="required">*</span></label>
-                  <input type="date" id="form-date" name="event_date" required>
-                </div>
-                <div class="form-group">
-                  <label for="form-message">Message <span class="required">*</span></label>
-                  <textarea id="form-message" name="message" rows="5" required placeholder="Event type, venue/city, guest count, and preferred package"></textarea>
-                </div>
-                <div id="formStatus" class="form-status" hidden></div>
-                <button type="submit" class="btn btn-primary btn-block btn-submit">Send Message</button>
-              </form>
-            </div>
+        </div>
+        <div class="booking-form-wrapper">
+          <div class="form-container custom-form">
+            <h3 class="form-title">Contact Us</h3>
+            <form id="bookingForm" novalidate>
+              <div class="form-group">
+                <label for="form-name">Name <span class="required">*</span></label>
+                <input type="text" id="form-name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email <span class="required">*</span></label>
+                <input type="email" id="form-email" name="email" required placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="form-phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="form-phone" name="phone" required placeholder="(720) 000-0000">
+              </div>
+              <div class="form-group">
+                <label for="form-date">Event Date <span class="required">*</span></label>
+                <input type="date" id="form-date" name="event_date" required>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message <span class="required">*</span></label>
+                <textarea id="form-message" name="message" rows="5" required placeholder="Event type, venue/city, guest count, and preferred package"></textarea>
+              </div>
+              <div id="formStatus" class="form-status" hidden></div>
+              <button type="submit" class="btn btn-primary btn-block btn-submit">Send Message</button>
+            </form>
           </div>
+        </div>
+        <div class="booking-contact">
           <div class="contact-details">
             <div class="contact-item">
               <span class="contact-icon">📍</span>
@@ -523,6 +525,8 @@
   </footer>
 
   <script src="js/lib/slider.js"></script>
+  <script src="js/lib/config-utils.js"></script>
+  <script src="js/lib/youtube-utils.js"></script>
   <script src="js/features/home-video.js"></script>
   <script src="js/features/ui/theme.js"></script>
   <script src="js/features/ui/navbar-scroll.js"></script>

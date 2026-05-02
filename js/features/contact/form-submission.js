@@ -10,7 +10,12 @@
       message: 'entry.XXXXX5',
     },
   };
+  const REQUIRED_FIELD_KEYS = ['name', 'email', 'phone', 'eventDate', 'message'];
   let cachedConfig = null;
+
+  function normalizeMode(mode) {
+    return mode === 'cors' ? 'cors' : 'no-cors';
+  }
 
   function getPayload(form) {
     return {
@@ -38,10 +43,16 @@
       const response = await fetch('assets/data/contact-form.json', { cache: 'no-store' });
       if (!response.ok) throw new Error('Contact form config request failed');
       const data = await response.json();
-      if (!data || !data.endpoint || !data.fields) throw new Error('Invalid contact form config');
+      if (
+        !data ||
+        !window.FrenzyConfigUtils.isNonEmptyString(data.endpoint) ||
+        !window.FrenzyConfigUtils.isValidFieldMap(data.fields, REQUIRED_FIELD_KEYS)
+      ) {
+        throw new Error('Invalid contact form config');
+      }
       cachedConfig = {
-        endpoint: data.endpoint,
-        mode: data.mode || 'no-cors',
+        endpoint: data.endpoint.trim(),
+        mode: normalizeMode(data.mode),
         fields: data.fields,
       };
       return cachedConfig;

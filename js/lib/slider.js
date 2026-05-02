@@ -3,6 +3,18 @@
     if (id) clearInterval(id);
   }
 
+  function postToYouTubePlayer(iframe, funcName) {
+    if (!iframe || !iframe.contentWindow) return;
+    iframe.contentWindow.postMessage(
+      JSON.stringify({
+        event: 'command',
+        func: funcName,
+        args: [],
+      }),
+      '*'
+    );
+  }
+
   function createSlider(config) {
     const track = document.getElementById(config.trackId);
     const dotsContainer = document.getElementById(config.dotsId);
@@ -33,8 +45,26 @@
       dotsContainer.appendChild(dot);
     });
 
+    function stopInactiveMedia(activeIndex) {
+      cards.forEach((card, index) => {
+        if (index === activeIndex) return;
+
+        card.querySelectorAll('video').forEach((video) => {
+          if (!video.paused) video.pause();
+        });
+
+        card.querySelectorAll('iframe').forEach((iframe) => {
+          postToYouTubePlayer(iframe, 'pauseVideo');
+          postToYouTubePlayer(iframe, 'stopVideo');
+        });
+      });
+
+      mediaIsPlaying = false;
+    }
+
     function goTo(index) {
       current = index;
+      stopInactiveMedia(current);
       track.style.transform = `translateX(-${current * 100}%)`;
       dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
         d.classList.toggle('active', i === current);
@@ -91,6 +121,7 @@
       goTo,
       destroy() {
         clearIntervalSafe(autoSlide);
+        stopInactiveMedia(-1);
         cleanups.forEach((fn) => fn());
         dotsContainer.innerHTML = '';
         if (track.__frenzySlider === instance) {

@@ -1,4 +1,17 @@
 (function () {
+  function normalizeInitialScroll() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Keep explicit hash navigation working (e.g. /index.html#booking).
+    if (window.location.hash) return;
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+
   function callInit(moduleName, methodName) {
     const moduleRef = window[moduleName];
     if (!moduleRef || typeof moduleRef[methodName] !== 'function') return;
@@ -10,6 +23,8 @@
   }
 
   function initApp() {
+    normalizeInitialScroll();
+
     callInit('FrenzyHomeVideo', 'initHomeVideo');
     callInit('FrenzyUI', 'initThemeToggle');
     callInit('FrenzyUI', 'initNavbarScroll');
