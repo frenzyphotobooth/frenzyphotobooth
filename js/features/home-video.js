@@ -1,5 +1,6 @@
 (function () {
   let isHomeVideoInit = false;
+  let teardownPlaylist = null;
 
   const HOME_FALLBACK = {
     poster: 'logo.png',
@@ -54,18 +55,65 @@
     const homeVideo = document.getElementById('homeVideo');
     if (!homeVideo) return;
 
+    if (teardownPlaylist) {
+      teardownPlaylist();
+      teardownPlaylist = null;
+    }
+
     homeVideo.style.display = '';
     homeVideo.innerHTML = '';
+    homeVideo.classList.remove('is-portrait');
     homeVideo.poster = config.poster || 'logo.png';
 
-    (config.sources || []).forEach((item) => {
-      const source = document.createElement('source');
-      source.src = item.src;
-      source.type = item.type || 'video/mp4';
-      homeVideo.appendChild(source);
-    });
+    const updateVideoFraming = () => {
+      if (!homeVideo.videoWidth || !homeVideo.videoHeight) return;
+      const isPortrait = homeVideo.videoHeight > homeVideo.videoWidth;
+      homeVideo.classList.toggle('is-portrait', isPortrait);
+    };
 
-    homeVideo.load();
+    const sources = Array.isArray(config.sources) ? config.sources.filter((item) => item && item.src) : [];
+    if (!sources.length) return;
+
+    if (sources.length === 1) {
+      const source = document.createElement('source');
+      source.src = sources[0].src;
+      source.type = sources[0].type || 'video/mp4';
+      homeVideo.appendChild(source);
+      homeVideo.loop = true;
+      homeVideo.addEventListener('loadedmetadata', updateVideoFraming);
+      homeVideo.load();
+      teardownPlaylist = () => {
+        homeVideo.removeEventListener('loadedmetadata', updateVideoFraming);
+      };
+      return;
+    }
+
+    let currentIndex = 0;
+    const setCurrentSource = (index) => {
+      const current = sources[index];
+      homeVideo.src = current.src;
+      homeVideo.type = current.type || 'video/mp4';
+      homeVideo.load();
+      const playPromise = homeVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    };
+
+    const onEnded = () => {
+      currentIndex = (currentIndex + 1) % sources.length;
+      setCurrentSource(currentIndex);
+    };
+
+    homeVideo.loop = false;
+    homeVideo.addEventListener('loadedmetadata', updateVideoFraming);
+    homeVideo.addEventListener('ended', onEnded);
+    setCurrentSource(0);
+
+    teardownPlaylist = () => {
+      homeVideo.removeEventListener('loadedmetadata', updateVideoFraming);
+      homeVideo.removeEventListener('ended', onEnded);
+    };
   }
 
   async function fetchHomeVideoConfig() {

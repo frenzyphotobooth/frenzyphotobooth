@@ -34,10 +34,10 @@
 /* ===== LIGHT NAV READABILITY OVERRIDES ===== */
 [data-theme="light"] .navbar .logo-text,
 [data-theme="light"] .navbar .nav-links a:not(.btn) {
-  color: #0f172a;
-  text-shadow: 0 2px 10px rgba(248, 248, 252, 0.85);
+  color: #a1a1aa;
+  text-shadow: none;
 }
 
 [data-theme="light"] .navbar .nav-links a:not(.btn):hover {
-  color: #020617;
+  color: #ffffff;
 }
