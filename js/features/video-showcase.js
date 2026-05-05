@@ -34,7 +34,7 @@
     card.className = 'video-card';
 
     if (item.youtubeId) {
-      const iframe = window.FrenzyYouTubeUtils.createEmbedIframe(item.youtubeId, {
+      const iframe = window.FrenzyMediaUtils.createYouTubeEmbed(item.youtubeId, {
         className: 'video-card-embed',
         title: item.title || 'Event Clip',
         params: {
@@ -44,20 +44,13 @@
           enablejsapi: '1',
         },
       });
-      card.appendChild(iframe);
+      if (iframe) card.appendChild(iframe);
     } else {
-      const video = document.createElement('video');
-      video.controls = true;
-      video.preload = 'metadata';
-      video.playsInline = true;
-      video.setAttribute('playsinline', '');
-      video.poster = item.poster || 'logo.png';
-
-      (item.sources || []).forEach((sourceItem) => {
-        const source = document.createElement('source');
-        source.src = sourceItem.src;
-        source.type = sourceItem.type || 'video/mp4';
-        video.appendChild(source);
+      const video = window.FrenzyMediaUtils.createLocalVideo({
+        sources: item.sources || [],
+        controls: true,
+        preload: 'metadata',
+        poster: item.poster || 'logo.png',
       });
       card.appendChild(video);
     }

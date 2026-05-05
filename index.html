@@ -284,26 +284,11 @@
         <h2 class="section-title">Captured <span class="gradient-text">Moments</span></h2>
         <p class="section-desc">A glimpse into the fun and memories we create at every event.</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item large">
-          <img src="assets/posters/event-03.jpg" alt="Wedding reception photobooth moments" width="3891" height="5837" loading="lazy" decoding="async">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/posters/event-01.jpg" alt="Birthday photobooth group pose" width="4000" height="6000" loading="lazy" decoding="async">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/posters/event-02.jpg" alt="Corporate event photobooth setup" width="4000" height="6000" loading="lazy" decoding="async">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/posters/event-04.jpg" alt="Graduation celebration photobooth capture" width="3840" height="5760" loading="lazy" decoding="async">
-        </div>
-        <div class="gallery-item large">
-          <img src="assets/posters/event-03.jpg" alt="Engagement party candid photobooth moment" width="3891" height="5837" loading="lazy" decoding="async">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/posters/event-04.jpg" alt="New Year's Eve photobooth snapshot" width="3840" height="5760" loading="lazy" decoding="async">
-        </div>
+      <div class="gallery-tabs" id="galleryTabs" role="tablist" aria-label="Gallery media type">
+        <button class="gallery-tab is-active" data-gallery-tab="photo" role="tab" aria-selected="true">Photos</button>
+        <button class="gallery-tab" data-gallery-tab="video" role="tab" aria-selected="false">Videos</button>
       </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
 
@@ -502,6 +487,7 @@
   <script src="js/lib/slider.js"></script>
   <script src="js/lib/config-utils.js"></script>
   <script src="js/lib/youtube-utils.js"></script>
+  <script src="js/lib/media-utils.js"></script>
   <script src="js/features/home-video.js"></script>
   <script src="js/features/ui/theme.js"></script>
   <script src="js/features/ui/navbar-scroll.js"></script>
@@ -513,6 +499,7 @@
   <script src="js/features/animations/smooth-scroll.js"></script>
   <script src="js/features/animations.js"></script>
   <script src="js/features/testimonials.js"></script>
+  <script src="js/features/gallery.js"></script>
   <script src="js/features/video-showcase.js"></script>
   <script src="js/features/contact/form-validation.js"></script>
   <script src="js/features/contact/form-ui.js"></script>
