@@ -37,7 +37,6 @@
 
     callInit('FrenzyTestimonials', 'initTestimonials');
     callInit('FrenzyGallery', 'initGallery');
-    callInit('FrenzyVideoShowcase', 'initVideoShowcase');
     callInit('FrenzyBookingForm', 'initBookingForm');
   }
 
