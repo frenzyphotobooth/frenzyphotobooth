@@ -12,6 +12,9 @@
         ? { render: window.FrenzyGalleryMobile.renderVideoMobile }
         : { render: window.FrenzyGalleryDesktop.renderVideoDesktop };
     }
+    if (type === 'photo' && viewportMode === 'mobile') {
+      return { render: window.FrenzyGalleryMobile.renderPhotoMobile };
+    }
     return { render: window.FrenzyGalleryShared.renderPhotoGrid };
   }
 
@@ -20,16 +23,16 @@
     const filtered = items.filter((item) => item.type === currentType);
     if (!filtered.length) {
       window.FrenzyGalleryShared.renderEmpty(grid);
-      return;
+      return null;
     }
     const viewportMode = getViewportMode();
     const behavior = getGalleryBehavior(currentType, viewportMode);
-    behavior.render(filtered, grid);
+    return behavior.render(filtered, grid) || null;
   }
 
   function bindTabs(items, tabs, grid) {
     let currentType = 'photo';
-    renderGallery(items, currentType, grid);
+    let cleanupRender = renderGallery(items, currentType, grid);
 
     let viewportMode = getViewportMode();
     const mediaQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
@@ -37,8 +40,9 @@
       const nextMode = getViewportMode();
       if (nextMode === viewportMode) return;
       if (document.fullscreenElement) return;
+      if (typeof cleanupRender === 'function') cleanupRender();
       viewportMode = nextMode;
-      renderGallery(items, currentType, grid);
+      cleanupRender = renderGallery(items, currentType, grid);
     };
     if (typeof mediaQuery.addEventListener === 'function') mediaQuery.addEventListener('change', onViewportChange);
     else if (typeof mediaQuery.addListener === 'function') mediaQuery.addListener(onViewportChange);
@@ -47,13 +51,14 @@
       tab.addEventListener('click', () => {
         const nextType = tab.getAttribute('data-gallery-tab');
         if (!nextType || nextType === currentType) return;
+        if (typeof cleanupRender === 'function') cleanupRender();
         currentType = nextType;
         tabs.forEach((btn) => {
           const isActive = btn === tab;
           btn.classList.toggle('is-active', isActive);
           btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
-        renderGallery(items, currentType, grid);
+        cleanupRender = renderGallery(items, currentType, grid);
       });
     });
   }
@@ -88,4 +93,3 @@
 
   window.FrenzyGallery = { initGallery };
 })();
-

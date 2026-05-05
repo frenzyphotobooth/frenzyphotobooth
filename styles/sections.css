@@ -622,6 +622,33 @@
   margin-top: 18px;
 }
 
+.gallery-photo-carousel {
+  grid-column: 1 / -1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-photo-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  touch-action: pan-y;
+}
+
+.gallery-photo-slide {
+  min-width: 100%;
+}
+
+.gallery-photo-slide .gallery-photo-card {
+  width: 100%;
+  margin: 0;
+}
+
+.gallery-photo-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
 .gallery-item {
   border-radius: var(--radius);
   border: 1px solid var(--border);
