@@ -9,7 +9,7 @@
     if (!root) return;
     isThemeInit = true;
 
-    const savedTheme = localStorage.getItem('frenzy-theme') || 'dark';
+    const savedTheme = localStorage.getItem('frenzy-theme') || 'light';
     root.setAttribute('data-theme', savedTheme);
 
     function toggleTheme() {
