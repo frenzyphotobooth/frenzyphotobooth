@@ -1,49 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frenzy Photobooth | Denver's Premier Photo Booth Experience</title>
-  <meta name="description" content="Frenzy Photobooth brings the fun to your Denver events. Weddings, parties, corporate events and more. Book your photo booth today!">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="Frenzy Photobooth" class="logo-img">
-        <span class="logo-text">Frenzy <span class="logo-accent">Photobooth</span></span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="/get-quote" class="btn btn-nav">Get a Quote</a></li>
-        <li>
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-          </button>
-        </li>
-      </ul>
-      <div class="nav-right-mobile">
-        <button class="theme-toggle theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle light/dark theme">
-          <span class="theme-icon sun">☀️</span>
-          <span class="theme-icon moon">🌙</span>
-        </button>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
+---
+layout: layouts/base.njk
+title: Frenzy Photobooth | Denver's Premier Photo Booth Experience
+description: Frenzy Photobooth brings the fun to your Denver events. Weddings, parties, corporate events and more. Get your photo booth quote today!
+scripts:
+  - /js/lib/slider.js
+  - /js/lib/config-utils.js
+  - /js/lib/youtube-utils.js
+  - /js/lib/media-utils.js
+  - /js/features/home-video.js
+  - /js/features/ui/theme.js
+  - /js/features/ui/navbar-scroll.js
+  - /js/features/ui/mobile-menu.js
+  - /js/features/ui.js
+  - /js/features/animations/counters.js
+  - /js/features/animations/scroll-reveal.js
+  - /js/features/animations/particles.js
+  - /js/features/animations/smooth-scroll.js
+  - /js/features/animations.js
+  - /js/features/testimonials.js
+  - /js/features/gallery/shared.js
+  - /js/features/gallery/desktop.js
+  - /js/features/gallery/mobile.js
+  - /js/features/gallery.js
+  - /js/core/main.js
+---
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-particles" id="particles"></div>
@@ -344,60 +324,3 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <img src="logo.png" alt="Frenzy Photobooth" class="logo-img">
-            <span class="logo-text">Frenzy <span class="logo-accent">Photobooth</span></span>
-          </a>
-          <p>Making every event unforgettable, one photo at a time, and creating lifetime moments every time.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Packages</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="/get-quote">Get a Quote</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Contact Us</h4>
-          <ul>
-            <li>info.frenzyphotobooth@gmail.com</li>
-            <li>(000) 000-0000</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Frenzy Photobooth. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/lib/slider.js"></script>
-  <script src="js/lib/config-utils.js"></script>
-  <script src="js/lib/youtube-utils.js"></script>
-  <script src="js/lib/media-utils.js"></script>
-  <script src="js/features/home-video.js"></script>
-  <script src="js/features/ui/theme.js"></script>
-  <script src="js/features/ui/navbar-scroll.js"></script>
-  <script src="js/features/ui/mobile-menu.js"></script>
-  <script src="js/features/ui.js"></script>
-  <script src="js/features/animations/counters.js"></script>
-  <script src="js/features/animations/scroll-reveal.js"></script>
-  <script src="js/features/animations/particles.js"></script>
-  <script src="js/features/animations/smooth-scroll.js"></script>
-  <script src="js/features/animations.js"></script>
-  <script src="js/features/testimonials.js"></script>
-  <script src="js/features/gallery/shared.js"></script>
-  <script src="js/features/gallery/desktop.js"></script>
-  <script src="js/features/gallery/mobile.js"></script>
-  <script src="js/features/gallery.js"></script>
-  <script src="js/core/main.js"></script>
-</body>
-</html>

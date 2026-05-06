@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+title: Get a Quote | Frenzy Photobooth
+description: Get a quote from Frenzy Photobooth for your event in Denver. Share your event details and we will reply with pricing and availability.
+scripts:
+  - /js/lib/config-utils.js
+  - /js/features/ui/theme.js
+  - /js/features/ui/navbar-scroll.js
+  - /js/features/ui/mobile-menu.js
+  - /js/features/ui.js
+  - /js/features/contact/form-validation.js
+  - /js/features/contact/form-ui.js
+  - /js/features/contact/form-submission.js
+  - /js/features/booking-form.js
+  - /js/core/get-quote.js
+---
+  <section class="section booking" id="get-quote">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Get a <span class="gradient-text">Quote</span></h1>
+        <p class="section-desc">Tell us about your event and we will get back to you within 24 hours with availability and pricing.</p>
+      </div>
+      <div class="booking-grid">
+        <div class="booking-info">
+          <h2 class="section-title">Tell Us About Your Event</h2>
+          <p>Use the form and share your date, location, and event details. We will follow up with a custom quote.</p>
+        </div>
+        <div class="booking-form-wrapper">
+          <div class="form-container custom-form">
+            <h3 class="form-title">Contact Us</h3>
+            <form id="bookingForm" novalidate>
+              <div class="form-group">
+                <label for="form-name">Name <span class="required">*</span></label>
+                <input type="text" id="form-name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email <span class="required">*</span></label>
+                <input type="email" id="form-email" name="email" required placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="form-phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="form-phone" name="phone" required placeholder="(720) 000-0000">
+              </div>
+              <div class="form-group">
+                <label for="form-date">Event Date <span class="required">*</span></label>
+                <input type="date" id="form-date" name="event_date" required>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message <span class="required">*</span></label>
+                <textarea id="form-message" name="message" rows="5" required placeholder="Event type, venue/city, guest count, and preferred package"></textarea>
+              </div>
+              <div id="formStatus" class="form-status" hidden></div>
+              <button type="submit" class="btn btn-primary btn-block btn-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <div class="booking-contact">
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <div>
+                <h4>Email</h4>
+                <p>info.frenzyphotobooth@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <h4>Phone</h4>
+                <p>(000) 000-0000</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">⏰</span>
+              <div>
+                <h4>Response Time</h4>
+                <p>Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

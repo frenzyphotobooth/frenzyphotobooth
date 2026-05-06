@@ -40,7 +40,7 @@
   async function fetchContactFormConfig() {
     if (cachedConfig) return cachedConfig;
     try {
-      const response = await fetch('assets/data/contact-form.json', { cache: 'no-store' });
+      const response = await fetch('/assets/data/contact-form.json', { cache: 'no-store' });
       if (!response.ok) throw new Error('Contact form config request failed');
       const data = await response.json();
       if (
