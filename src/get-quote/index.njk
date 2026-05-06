@@ -27,7 +27,6 @@ scripts:
         </div>
         <div class="booking-form-wrapper">
           <div class="form-container custom-form">
-            <h3 class="form-title">Contact Us</h3>
             <form id="bookingForm" novalidate>
               <div class="form-group">
                 <label for="form-name">Name <span class="required">*</span></label>
@@ -44,6 +43,18 @@ scripts:
               <div class="form-group">
                 <label for="form-date">Event Date <span class="required">*</span></label>
                 <input type="date" id="form-date" name="event_date" required>
+              </div>
+              <div class="form-group">
+                <label for="form-event-type">Event Type <span class="required">*</span></label>
+                <select id="form-event-type" name="event_type" required>
+                  <option value="" selected disabled>Choose event type</option>
+                  <option value="Birthday party">Birthday party</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Corporate Event">Corporate Event</option>
+                  <option value="Private Party">Private Party</option>
+                  <option value="School Event">School Event</option>
+                  <option value="Other / Not listed">Other / Not listed</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="form-message">Message <span class="required">*</span></label>

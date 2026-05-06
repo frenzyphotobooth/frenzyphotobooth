@@ -7,10 +7,11 @@
       email: 'entry.XXXXX2',
       phone: 'entry.XXXXX3',
       eventDate: 'entry.XXXXX4',
-      message: 'entry.XXXXX5',
+      eventType: 'entry.XXXXX5',
+      message: 'entry.XXXXX6',
     },
   };
-  const REQUIRED_FIELD_KEYS = ['name', 'email', 'phone', 'eventDate', 'message'];
+  const REQUIRED_FIELD_KEYS = ['name', 'email', 'phone', 'eventDate', 'eventType', 'message'];
   let cachedConfig = null;
 
   function normalizeMode(mode) {
@@ -23,6 +24,7 @@
       email: form.querySelector('#form-email')?.value || '',
       phone: form.querySelector('#form-phone')?.value || '',
       eventDate: form.querySelector('#form-date')?.value || '',
+      eventType: form.querySelector('#form-event-type')?.value || '',
       message: form.querySelector('#form-message')?.value || '',
     };
   }

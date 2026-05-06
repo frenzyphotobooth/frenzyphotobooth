@@ -32,8 +32,9 @@
   }
 
   function wireErrorClearOnInput(form) {
-    form.querySelectorAll('input, textarea').forEach((field) => {
+    form.querySelectorAll('input, textarea, select').forEach((field) => {
       field.addEventListener('input', () => field.classList.remove('error'));
+      field.addEventListener('change', () => field.classList.remove('error'));
     });
   }
 
