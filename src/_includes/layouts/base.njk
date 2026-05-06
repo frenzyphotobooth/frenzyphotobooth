@@ -13,7 +13,13 @@
 <body>
   {% include "partials/nav.njk" %}
   {{ content | safe }}
+  {% if not hideFloatingQuote %}
+  <a href="{{ site.navigation.cta.href }}" class="btn btn-primary floating-quote-btn" aria-label="{{ site.navigation.cta.label }}">
+    {{ site.navigation.cta.label }}
+  </a>
+  {% endif %}
   {% include "partials/footer.njk" %}
+  <script src="/js/features/ui/floating-quote.js"></script>
   {% for script in scripts %}
   <script src="{{ script }}"></script>
   {% endfor %}

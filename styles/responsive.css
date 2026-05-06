@@ -41,3 +41,56 @@
 [data-theme="light"] .navbar .nav-links a:not(.btn):hover {
   color: #ffffff;
 }
+
+.floating-quote-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .floating-quote-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 1200;
+    padding: 12px 16px;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .floating-quote-btn.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    animation: floating-quote-pulse 2.4s ease-in-out infinite;
+  }
+
+  .floating-quote-btn.is-visible.is-scrolling {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes floating-quote-pulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  }
+  50% {
+    transform: translateY(0) scale(1.08);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-quote-btn,
+  .floating-quote-btn.is-visible {
+    animation: none !important;
+    transition: none !important;
+  }
+}
