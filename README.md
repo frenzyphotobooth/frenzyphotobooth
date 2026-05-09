@@ -70,6 +70,7 @@ Runtime behavior:
 
 Detailed architecture and module docs:
 
+- [documentation/setup-guide.md](documentation/setup-guide.md)
 - [documentation/architecture.md](documentation/architecture.md)
 - [documentation/README.md](documentation/README.md)
 - [documentation/apps-script-gallery-api.md](documentation/apps-script-gallery-api.md)
