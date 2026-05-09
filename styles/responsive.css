@@ -41,9 +41,12 @@
 }
 
 /* ===== LIGHT NAV READABILITY OVERRIDES ===== */
-[data-theme="light"] .navbar .logo-text,
+[data-theme="light"] .navbar .logo-text {
+  color: #ffffff;
+  text-shadow: none;
+}
 [data-theme="light"] .navbar .nav-links a:not(.btn) {
-  color: #a1a1aa;
+  color: #ffffff;
   text-shadow: none;
 }
 

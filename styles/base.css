@@ -65,13 +65,27 @@
   border-bottom: none;
   backdrop-filter: none;
 }
-[data-theme="light"] .navbar .logo-text,
+[data-theme="light"] .navbar .logo-text {
+  color: #ffffff;
+  text-shadow: none;
+}
+[data-theme="light"] .navbar.scrolled .logo-text {
+  color: #111827;
+  text-shadow: none;
+}
 [data-theme="light"] .navbar .nav-links a:not(.btn) {
-  color: var(--text-muted);
+  color: #ffffff;
   text-shadow: none;
 }
 [data-theme="light"] .navbar .nav-links a:not(.btn):hover {
   color: #ffffff;
+}
+[data-theme="light"] .navbar.scrolled .nav-links a:not(.btn) {
+  color: #111827;
+  text-shadow: none;
+}
+[data-theme="light"] .navbar.scrolled .nav-links a:not(.btn):hover {
+  color: #020617;
 }
 
 [data-theme="light"] .services {
@@ -110,15 +124,14 @@
   border-color: rgba(255,255,255,0.35);
   background: rgba(15,23,42,0.28);
 }
+[data-theme="light"] .hero-title .gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
 
-[data-theme="light"] .btn-outline {
-  border-color: rgba(0,0,0,0.15);
-  color: var(--text-heading);
-}
-[data-theme="light"] .btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
 [data-theme="light"] .btn-nav {
   background: rgba(255,255,255,0.86);
   border: 1px solid rgba(15,23,42,0.18);
