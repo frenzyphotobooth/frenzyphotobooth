@@ -41,16 +41,16 @@
 }
 
 /* ===== LIGHT NAV READABILITY OVERRIDES ===== */
-[data-theme="light"] .navbar .logo-text {
+[data-theme="light"] body.page-home .navbar .logo-text {
   color: #ffffff;
   text-shadow: none;
 }
-[data-theme="light"] .navbar .nav-links a:not(.btn) {
+[data-theme="light"] body.page-home .navbar .nav-links a:not(.btn) {
   color: #ffffff;
   text-shadow: none;
 }
 
-[data-theme="light"] .navbar .nav-links a:not(.btn):hover {
+[data-theme="light"] body.page-home .navbar .nav-links a:not(.btn):hover {
   color: #ffffff;
 }
 

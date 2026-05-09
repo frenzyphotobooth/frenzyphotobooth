@@ -93,8 +93,8 @@
 
 .nav-links a {
   font-size: 0.9rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 500;
+  color: var(--text-muted);
   transition: var(--transition);
   position: relative;
 }

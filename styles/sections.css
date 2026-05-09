@@ -363,11 +363,11 @@
   [data-theme="light"] .navbar.scrolled {
     background: rgba(248,248,252,0.92);
   }
-  [data-theme="light"] .navbar .logo-text {
+  [data-theme="light"] body.page-home .navbar .logo-text {
     color: #ffffff;
     text-shadow: 0 2px 10px rgba(248,248,252,0.85);
   }
-  [data-theme="light"] .navbar .nav-links a:not(.btn) {
+  [data-theme="light"] body.page-home .navbar .nav-links a:not(.btn) {
     color: #ffffff;
     text-shadow: none;
   }
@@ -430,13 +430,13 @@
       0 24px 50px rgba(0,0,0,0.15),
       0 0 0 1px rgba(124,58,237,0.1) inset;
   }
-  [data-theme="light"] .nav-links a:not(.btn) { color: #ffffff; }
-  [data-theme="light"] .nav-links a:not(.btn):hover { color: #ffffff; }
-  [data-theme="light"] .navbar .nav-links a:not(.btn) {
+  [data-theme="light"] .nav-links a:not(.btn) { color: #3f3f46; }
+  [data-theme="light"] .nav-links a:not(.btn):hover { color: #18181b; }
+  [data-theme="light"] body.page-home .navbar .nav-links a:not(.btn) {
     color: #ffffff;
     text-shadow: none;
   }
-  [data-theme="light"] .navbar .nav-links a:not(.btn):hover { color: #ffffff; }
+  [data-theme="light"] body.page-home .navbar .nav-links a:not(.btn):hover { color: #ffffff; }
   [data-theme="light"] .nav-links .btn-nav {
     background: rgba(15,23,42,0.06);
     border-color: rgba(15,23,42,0.14);
