@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: Photo Categories | Frenzy Photobooth
+description: Browse Frenzy Photobooth event galleries by category.
+---
+<section class="section gallery-page">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Photo Gallery</p>
+      <h1 class="section-title">Event <span class="gradient-text">Categories</span></h1>
+      <p class="section-desc">Choose a category to view all photos from Google Drive.</p>
+    </div>
+    <div class="gallery-grid gallery-category-grid">
+      {% for category in photoCategories %}
+      <a class="gallery-item gallery-category-card" href="/gallery/{{ category.slug }}/" aria-label="View {{ category.title }} photos">
+        <div class="gallery-media">
+          <img src="/{{ category.coverImage }}" alt="{{ category.title }} photo gallery cover" loading="lazy" decoding="async">
+        </div>
+        <div class="gallery-meta">
+          <h4>{{ category.title }}</h4>
+          <p class="gallery-category-desc">{{ category.description }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

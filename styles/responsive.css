@@ -29,6 +29,15 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .gallery-lightbox {
+    padding: 16px 12px;
+  }
+
+  .gallery-lightbox-content,
+  .gallery-lightbox-image {
+    max-width: 95vw;
+    max-height: 82vh;
+  }
 }
 
 /* ===== LIGHT NAV READABILITY OVERRIDES ===== */

@@ -262,7 +262,7 @@ scripts:
       <div class="section-header">
         <p class="section-tag">Our Work</p>
         <h2 class="section-title">Captured <span class="gradient-text">Moments</span></h2>
-        <p class="section-desc">A glimpse into the fun and memories we create at every event.</p>
+        <p class="section-desc">Browse photo categories and tap in to view full event albums.</p>
       </div>
       <div class="gallery-tabs" id="galleryTabs" role="tablist" aria-label="Gallery media type">
         <button class="gallery-tab is-active" data-gallery-tab="photo" role="tab" aria-selected="true">Photos</button>
@@ -271,6 +271,9 @@ scripts:
       <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
+  <script>
+    window.FRENZY_DRIVE_API_KEY = "{{ env.driveApiKey }}";
+  </script>
 
   <!-- Testimonials Section -->
   <section class="section testimonials" id="testimonials">
@@ -323,4 +326,3 @@ scripts:
       </div>
     </div>
   </section>
-

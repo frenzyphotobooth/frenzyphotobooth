@@ -4,37 +4,67 @@ Marketing website for Frenzy Photobooth.
 
 ## Project Setup
 
-This is a static HTML/CSS/JS project with no build step.
+This project uses **Eleventy (11ty)** to build static pages from templates and data.
 
 ### Prerequisites
 
-- `python3`
+- `node` + `npm`
 
 ### Run Locally
 
 ```bash
-python3 -m http.server 4173
+npm install
+export GALLERY_WEBAPP_URL="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
+npm run dev
 ```
 
 Open:
 
-- [http://127.0.0.1:4173](http://127.0.0.1:4173)
+- [http://localhost:8081](http://localhost:8081)
 
 ### Stop Server
 
 Press `Ctrl + C` in the terminal.
 
-## Where To Edit Videos
+## Build
 
-Both video areas are config-driven:
+```bash
+npm run build
+```
 
-- Home video config: `assets/data/home-video.json`
-- Event Energy slider config: `assets/data/videos.json`
+Output is generated in `_site/`.
 
-Use local repo paths in JSON (recommended), for example:
+## Drive-Powered Photo Gallery
 
-- `assets/videos/home-loop.mp4`
-- `assets/posters/home-loop.jpg`
+Photo categories are configured in:
+
+- `assets/data/photo-categories.json`
+
+Each category has:
+
+- local thumbnail (`coverImage`) for homepage cards
+- Drive subfolder ID (`driveFolderId`) for dynamic gallery images
+
+Category pages:
+
+- `/gallery/birthday/`
+- `/gallery/corporate/`
+- `/gallery/graduation/`
+- `/gallery/marriage/`
+
+Apps Script / Drive requirements:
+
+- Apps Script Web App deployed with:
+  - Execute as: `Me`
+  - Access: `Anyone`
+- Script account must authorize Drive access (`DriveApp`) once via test run.
+- Shared folders/files must be accessible to `Anyone with the link` (Viewer).
+
+Runtime behavior:
+
+- category pages fetch image metadata from Apps Script Web App when configured
+- thumbnail images are lazy loaded with retry backoff
+- file metadata is cached in browser `localStorage` for 30 minutes
 
 ## Documentation
 
@@ -42,3 +72,5 @@ Detailed architecture and module docs:
 
 - [documentation/architecture.md](documentation/architecture.md)
 - [documentation/README.md](documentation/README.md)
+- [documentation/apps-script-gallery-api.md](documentation/apps-script-gallery-api.md)
+- [documentation/apps-script-email-workflow.md](documentation/apps-script-email-workflow.md)

@@ -1,77 +1,51 @@
 # Editing Guide
 
-Quick map of common tasks to the files you should edit.
+Quick map of common tasks to files.
 
-## Core Entry + Bootstrap
+## Build + Templates
 
-- App bootstrap/init sequence: `js/core/main.js`
-- Script include order: `index.html` (bottom script tags)
+- Eleventy build config: `.eleventy.js`
+- Homepage template: `src/index.njk`
+- Category page template: `src/gallery/category.njk`
+- Base layout: `src/_includes/layouts/base.njk`
+- Shared site data: `src/_data/`
 
-## Theme + Header
+## Photo Categories (Homepage Cards + Category Pages)
 
-- Theme toggle behavior/localStorage/default theme: `js/features/ui/theme.js`
-- Navbar scroll behavior (`.navbar.scrolled`): `js/features/ui/navbar-scroll.js`
-- Mobile menu open/close behavior: `js/features/ui/mobile-menu.js`
-- Navbar and header visuals: `styles/nav.css`
-- Light-mode navbar readability overrides: `styles/responsive.css`
+- Category definitions (title/slug/local cover/Drive folder id): `assets/data/photo-categories.json`
+- Homepage categories rendering + mobile carousel: `js/features/gallery.js`
+- Category page runtime (Drive fetch/cache/lazy-load/lightbox): `js/features/category-gallery.js`
+- Gallery styles: `styles/sections.css`
+- Gallery mobile/responsive overrides: `styles/responsive.css`
 
-## Hero Section
+## Videos + Mixed Gallery
 
-- Hero markup/content: `index.html` (`#home` section)
-- Home background video logic (YouTube vs local): `js/features/home-video.js`
-- Home video data source: `assets/data/home-video.json`
-- Hero visual styling (video tint/overlay/spacing): `styles/hero.css`
+- Home gallery media config: `assets/data/gallery.json`
+- Shared media card helpers: `js/features/gallery/shared.js`
+- Desktop video layout: `js/features/gallery/desktop.js`
+- Mobile video/photo carousel behavior: `js/features/gallery/mobile.js`
 
-## Event Energy On Camera (Video Showcase)
+## Home + UI + Animations
 
-- Section markup: `index.html` (`#video-showcase`)
-- Card rendering + YouTube embed params: `js/features/video-showcase.js`
-- Showcase data/config: `assets/data/videos.json`
-- Slider/controls behavior (shared): `js/lib/slider.js`
-- Showcase styles: `styles/sections.css`
+- App bootstrap: `js/core/main.js`
+- Home video feature: `js/features/home-video.js`
+- Theme + navbar + mobile nav: `js/features/ui/*.js`
+- Animation modules: `js/features/animations/*.js`
 
-## Testimonials Slider
+## Drive Integration
 
-- Section markup/cards: `index.html` (`#testimonials`)
-- Testimonials feature init: `js/features/testimonials.js`
-- Shared slider behavior: `js/lib/slider.js`
-- Testimonials styles: `styles/sections.css`
+- Env key wiring source: `src/_data/env.js`
+- Required env var: `GALLERY_WEBAPP_URL`
+- Folder IDs used per category from: `assets/data/photo-categories.json`
+- Runtime fetch/cache/lazy logic: `js/features/category-gallery.js`
 
-## Booking + Contact Form
+## Styling
 
-- Booking layout/content: `index.html` (`#booking`)
-- Booking orchestration module: `js/features/booking-form.js`
-- Validation rules: `js/features/contact/form-validation.js`
-- Form UI state/messages: `js/features/contact/form-ui.js`
-- Submission mapping/network call: `js/features/contact/form-submission.js`
-- External form endpoint/field IDs: `assets/data/contact-form.json`
-- Booking/form styles: `styles/sections.css`
-
-## Animations
-
-- Animation feature aggregator: `js/features/animations.js`
-- Counters: `js/features/animations/counters.js`
-- Scroll reveal: `js/features/animations/scroll-reveal.js`
-- Particles: `js/features/animations/particles.js`
-- Smooth anchor scroll: `js/features/animations/smooth-scroll.js`
-- Animation CSS: `styles/animations.css`
-
-## Global Styling
-
-- Design tokens/reset/base text styles: `styles/base.css`
-- Section and component styles: `styles/sections.css`
-- Footer styles: `styles/footer.css`
-- Responsive breakpoints and final overrides: `styles/responsive.css`
-- CSS import manifest (load order): `styles.css`
-
-## Media and Assets
-
-- JSON content/config files: `assets/data/`
-- Local video files (recommended): `assets/videos/`
-- Poster/thumbnail images (recommended): `assets/posters/`
-- Brand logo image: `logo.png`
-
-## Documentation
-
-- Architecture docs: `documentation/architecture.md`
-- Contributor map (this file): `documentation/editing-guide.md`
+- Base tokens + typography: `styles/base.css`
+- Nav: `styles/nav.css`
+- Hero: `styles/hero.css`
+- Sections/components: `styles/sections.css`
+- Footer: `styles/footer.css`
+- Motion styles: `styles/animations.css`
+- Responsive overrides: `styles/responsive.css`
+- CSS manifest/import order: `styles.css`

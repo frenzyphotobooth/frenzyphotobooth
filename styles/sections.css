@@ -743,6 +743,116 @@
   padding: 16px;
 }
 
+.gallery-category-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-category-desc {
+  margin-top: 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.gallery-page {
+  min-height: 65vh;
+}
+
+.gallery-category-photos {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.gallery-photo-trigger {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.gallery-photo-trigger .gallery-media {
+  border-radius: 14px;
+}
+
+.gallery-page-header {
+  margin-bottom: 1.25rem;
+}
+
+.gallery-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.gallery-back-link:hover {
+  text-decoration: underline;
+}
+
+.gallery-lightbox {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  margin: 0;
+  inset: 0;
+  overscroll-behavior: contain;
+}
+
+.gallery-lightbox[open] {
+  display: grid;
+  place-items: center;
+  padding: max(20px, 4vh) 3vw;
+}
+
+.gallery-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.gallery-lightbox-content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(94vw, 1160px);
+  max-height: 88vh;
+}
+
+.gallery-lightbox-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(94vw, 1160px);
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #0b0b11;
+  margin: 0 auto;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
 [data-theme="light"] .gallery-item {
   background: #ffffff;
   border-color: #d9d9e6;
