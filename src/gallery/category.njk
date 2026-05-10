@@ -1,0 +1,42 @@
+---
+pagination:
+  data: photoCategories
+  size: 1
+  alias: category
+permalink: "/gallery/{{ category.slug }}/index.html"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ category.title }} Photos | Frenzy Photobooth"
+  description: "{{ category.description }}"
+---
+<section class="section gallery-page">
+  <div class="container">
+    <div class="gallery-page-header">
+      <a href="/#gallery" class="gallery-back-link" id="galleryBackLink">← Back to Categories</a>
+      <h1 class="section-title">{{ category.title }} <span class="gradient-text">Photos</span></h1>
+      <p class="section-desc">{{ category.description }}</p>
+    </div>
+
+    <div
+      class="gallery-grid gallery-category-photos"
+      id="driveCategoryGrid"
+      data-category-slug="{{ category.slug }}"
+      data-drive-folder-id="{{ category.driveFolderId }}"
+      data-category-title="{{ category.title }}"
+      data-drive-fallback-url="{{ category.driveFolderUrl }}">
+      <p class="gallery-empty">Loading photos...</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.FRENZY_GALLERY_WEBAPP_URL = "{{ env.galleryWebAppUrl }}";
+</script>
+<script src="/js/features/category-gallery.js"></script>
+
+<dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Photo viewer">
+  <div class="gallery-lightbox-content">
+    <button type="button" class="gallery-lightbox-close" aria-label="Close photo viewer">×</button>
+    <img class="gallery-lightbox-image" src="" alt="">
+  </div>
+</dialog>

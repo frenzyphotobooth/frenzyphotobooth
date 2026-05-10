@@ -1,0 +1,329 @@
+---
+layout: layouts/base.njk
+title: Frenzy Photobooth | Denver's Premier Photo Booth Experience
+description: Frenzy Photobooth brings the fun to your Denver events. Weddings, parties, corporate events and more. Get your photo booth quote today!
+pageClass: page-home
+scripts:
+  - /js/lib/slider.js
+  - /js/lib/config-utils.js
+  - /js/lib/youtube-utils.js
+  - /js/lib/media-utils.js
+  - /js/features/home-video.js
+  - /js/features/ui/theme.js
+  - /js/features/ui/navbar-scroll.js
+  - /js/features/ui/mobile-menu.js
+  - /js/features/ui.js
+  - /js/features/animations/counters.js
+  - /js/features/animations/scroll-reveal.js
+  - /js/features/animations/particles.js
+  - /js/features/animations/smooth-scroll.js
+  - /js/features/animations.js
+  - /js/features/testimonials.js
+  - /js/features/gallery/shared.js
+  - /js/features/gallery/desktop.js
+  - /js/features/gallery/mobile.js
+  - /js/features/gallery.js
+  - /js/core/main.js
+---
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-particles" id="particles"></div>
+    <div class="home-video-wrap" aria-hidden="true">
+      <video id="homeVideo" class="home-video" autoplay muted loop playsinline preload="metadata" poster="logo.png"></video>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tagline">Denver's Premier Photo Booth Experience</p>
+      <h1 class="hero-title">Make Every Moment <span class="gradient-text">Unforgettable</span></h1>
+      <p class="hero-subtitle">Capture the fun, the laughter, and the memories. Frenzy Photobooth brings the party to weddings, corporate events, birthdays, and everything in between.</p>
+      <div class="hero-cta">
+        <a href="/get-quote" class="btn btn-primary btn-lg">Get a Quote</a>
+        <a href="#services" class="btn btn-outline btn-lg">Our Packages</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="about-img-wrapper img-1">
+            <img src="assets/posters/event-01.jpg" alt="Guests enjoying Frenzy Photobooth" width="4000" height="6000" loading="lazy" decoding="async">
+          </div>
+          <div class="about-img-wrapper img-2">
+            <img src="assets/posters/event-02.jpg" alt="Event celebration with photobooth moments" width="4000" height="6000" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="section-tag">About Us</p>
+          <h2 class="section-title">We Bring the <span class="gradient-text">Energy</span></h2>
+          <p>At Frenzy Photobooth, we believe every event deserves a splash of excitement. Based right here in Denver, Colorado, we've been turning ordinary gatherings into extraordinary memories.</p>
+          <p>Our state-of-the-art photo booths come equipped with professional lighting, high-quality cameras, and an endless supply of hilarious props. Whether it's a wedding reception, a corporate gala, or a backyard birthday bash, we bring the energy that gets everyone off their seats.</p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">⚡</div>
+              <div>
+                <h4>Instant Prints</h4>
+                <p>High-quality prints in seconds</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🎭</div>
+              <div>
+                <h4>Premium Props</h4>
+                <p>Curated collection for every theme</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📱</div>
+              <div>
+                <h4>Digital Sharing</h4>
+                <p>Instant social media sharing</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🎨</div>
+              <div>
+                <h4>Custom Designs</h4>
+                <p>Branded overlays & templates</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Our Packages</p>
+        <h2 class="section-title">Photo Booth <span class="gradient-text">Packages</span></h2>
+        <p class="section-desc">We bring the booth, you bring the vibes! 3 hrs standard rental time included with every package.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+          <div class="card-badge">Starter</div>
+          <div class="card-icon">📱</div>
+          <h3>iPad Photo Booth</h3>
+          <p class="card-subtitle">The Spark</p>
+          <p class="card-price"><span>$250</span></p>
+          <ul class="card-features">
+            <li>Standard backdrop</li>
+            <li>Props and prop table</li>
+            <li>Photo/GIF/Video</li>
+            <li>Boomerang</li>
+            <li>GIFs</li>
+            <li>Instantly send captures via text or email</li>
+            <li>Link to Gallery with all captures taken throughout event</li>
+            <li>3 HRS STANDARD RENTAL TIME</li>
+          </ul>
+          <a href="/get-quote" class="btn btn-primary btn-block">Get a Quote</a>
+        </div>
+        <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-badge accent">Most Booked</div>
+          <div class="card-icon">🎥</div>
+          <h3>360 Video Booth</h3>
+          <p class="card-subtitle">The Orbit</p>
+          <p class="card-price"><span>$350</span></p>
+          <ul class="card-features">
+            <li>Your choice of backdrop</li>
+            <li>Props and prop table</li>
+            <li>High-Speed 360 Video</li>
+            <li>Boomerang</li>
+            <li>GIFs</li>
+            <li>Instantly send captures via text or email</li>
+            <li>Link to Gallery with all captures taken throughout event</li>
+            <li>3 HRS STANDARD RENTAL TIME</li>
+          </ul>
+          <a href="/get-quote" class="btn btn-primary btn-block">Get a Quote</a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-badge">Premium</div>
+          <div class="card-icon">📷</div>
+          <h3>DSLR Photo Booth</h3>
+          <p class="card-subtitle">The Prestige</p>
+          <p class="card-price"><span>$450</span></p>
+          <ul class="card-features">
+            <li>Standard backdrop</li>
+            <li>Props and prop table</li>
+            <li>Prints &amp; Digital Photos</li>
+            <li>Boomerang</li>
+            <li>GIFs</li>
+            <li>Instantly send captures via text or email</li>
+            <li>Link to Gallery with all captures taken throughout event</li>
+            <li>3 HRS STANDARD RENTAL TIME</li>
+          </ul>
+          <a href="/get-quote" class="btn btn-primary btn-block">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- Add-Ons -->
+      <div class="addons-section">
+        <h3 class="addons-title">Add Ons</h3>
+        <div class="addons-grid">
+          <div class="addon-items-grid">
+            <div class="addon-item">
+              <span class="addon-name">Custom Overlay</span>
+              <span class="addon-price">$20</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Custom Tap to Start Screen</span>
+              <span class="addon-price">$45</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Additional Hours</span>
+              <span class="addon-price">$100/hr</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Specialty Backdrop</span>
+              <span class="addon-price">$55</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Neon Sign</span>
+              <span class="addon-price">$25</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Balloon Garland</span>
+              <span class="addon-price">Varies</span>
+            </div>
+          </div>
+          <div class="addon-notice">
+            <span class="notice-icon">⚠️</span>
+            <p>There is a <strong>$75 deposit</strong> required when scheduling that will be put towards your final payment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package Comparison -->
+      <div class="comparison-section">
+        <h3 class="comparison-title">Photo Booth Package <span class="gradient-text">Comparison</span></h3>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>iPad Photo Booth<br><small>The Spark</small></th>
+                <th>360 Video Booth<br><small>The Orbit</small></th>
+                <th>DSLR Photo Booth<br><small>The Prestige</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Primary Output</td>
+                <td>Digital (Photo/GIF/Video)</td>
+                <td>High-Speed Video/360 Rotation</td>
+                <td>Prints &amp; Digital Photos</td>
+              </tr>
+              <tr>
+                <td>Camera Quality</td>
+                <td>Good (Tablet camera)</td>
+                <td>Excellent (Action Cam/Phone)</td>
+                <td>Excellent (Pro DSLR)</td>
+              </tr>
+              <tr>
+                <td>Lighting</td>
+                <td>LED Ring Light</td>
+                <td>Ring Light + LED Strips</td>
+                <td>External Studio Flash</td>
+              </tr>
+              <tr>
+                <td>Portability</td>
+                <td>High (Lightweight)</td>
+                <td>Moderate (Requires space)</td>
+                <td>Low (Heavy/Large)</td>
+              </tr>
+              <tr>
+                <td>Ideal For</td>
+                <td>Casual, Social Sharing</td>
+                <td>Brand Activation, Glam</td>
+                <td>Weddings, Corporate</td>
+              </tr>
+              <tr>
+                <td>Setup Time</td>
+                <td>Fast (Plug-and-play)</td>
+                <td>Moderate</td>
+                <td>Adequate</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Our Work</p>
+        <h2 class="section-title">Captured <span class="gradient-text">Moments</span></h2>
+        <p class="section-desc">Browse photo categories and tap in to view full event albums.</p>
+      </div>
+      <div class="gallery-tabs" id="galleryTabs" role="tablist" aria-label="Gallery media type">
+        <button class="gallery-tab is-active" data-gallery-tab="photo" role="tab" aria-selected="true">Photos</button>
+        <button class="gallery-tab" data-gallery-tab="video" role="tab" aria-selected="false">Videos</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+  <script>
+    window.FRENZY_DRIVE_API_KEY = "{{ env.driveApiKey }}";
+  </script>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Testimonials</p>
+        <h2 class="section-title">What Our Clients <span class="gradient-text">Say</span></h2>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Frenzy Photobooth was the highlight of our wedding! Every single guest had a blast, and the prints were gorgeous. Couldn't recommend them more!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">S</div>
+              <div>
+                <h4>Sarah & Mike</h4>
+                <span>Wedding - Denver, CO</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"We hired Frenzy for our company holiday party and it was a huge hit. Professional, fun, and the custom branding was on point. Already booked for next year!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">J</div>
+              <div>
+                <h4>James R.</h4>
+                <span>Corporate Event - Boulder, CO</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"My daughter's quinceañera was absolutely perfect thanks to Frenzy. The props were amazing, the attendant was so friendly, and the photos turned out beautiful!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">M</div>
+              <div>
+                <h4>Maria G.</h4>
+                <span>Quinceañera - Aurora, CO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn prev" id="prevBtn" aria-label="Previous testimonial">←</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn next" id="nextBtn" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
