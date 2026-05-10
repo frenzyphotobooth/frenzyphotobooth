@@ -1,6 +1,13 @@
 (function () {
   let isGalleryInit = false;
   const MOBILE_BREAKPOINT = 900;
+  const BASE_PATH = (window.FRENZY_BASE_PATH || '').replace(/\/+$/, '');
+
+  function withBase(path) {
+    if (!BASE_PATH) return path;
+    if (path.startsWith('/')) return `${BASE_PATH}${path}`;
+    return `${BASE_PATH}/${path}`;
+  }
 
   function getViewportMode() {
     return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches ? 'mobile' : 'desktop';
@@ -28,7 +35,7 @@
     categories.forEach((category) => {
       const link = document.createElement('a');
       link.className = 'gallery-item gallery-category-card';
-      link.href = `/gallery/${encodeURIComponent(category.slug)}/`;
+      link.href = withBase(`/gallery/${encodeURIComponent(category.slug)}/`);
       link.setAttribute('aria-label', `View ${category.title} photos`);
 
       const mediaWrap = document.createElement('div');
@@ -77,7 +84,7 @@
       slideItems.forEach((category) => {
         const link = document.createElement('a');
         link.className = 'gallery-item gallery-category-card gallery-photo-card';
-        link.href = `/gallery/${encodeURIComponent(category.slug)}/`;
+        link.href = withBase(`/gallery/${encodeURIComponent(category.slug)}/`);
         link.setAttribute('aria-label', `View ${category.title} photos`);
 
         const mediaWrap = document.createElement('div');

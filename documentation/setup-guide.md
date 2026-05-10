@@ -22,6 +22,19 @@ Build output:
 npm run build
 ```
 
+`npm run build` sets `ELEVENTY_ENV=production` so generated links include the GitHub Pages project base path.
+
+Build target options:
+
+- GitHub Pages project URL:
+  ```bash
+  npm run build:gh-pages
+  ```
+- Custom domain:
+  ```bash
+  npm run build:domain
+  ```
+
 ## 2. Apps Script Gallery API Setup
 
 Use your Apps Script project for gallery metadata endpoint.

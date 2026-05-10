@@ -1,14 +1,14 @@
 <nav class="navbar" id="navbar">
   <div class="container nav-container">
-    <a href="/" class="logo">
-      <img src="{{ site.brand.logoSrc }}" alt="{{ site.brand.logoAlt }}" class="logo-img">
+    <a href="{{ '/' | withBase(site.basePath) }}" class="logo">
+      <img src="{{ site.brand.logoSrc | withBase(site.basePath) }}" alt="{{ site.brand.logoAlt }}" class="logo-img">
       <span class="logo-text">{{ site.brand.name }} <span class="logo-accent">{{ site.brand.accent }}</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
       {% for item in site.navigation.links %}
-      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+      <li><a href="{{ item.href | withBase(site.basePath) }}">{{ item.label }}</a></li>
       {% endfor %}
-      <li><a href="{{ site.navigation.cta.href }}" class="btn btn-nav">{{ site.navigation.cta.label }}</a></li>
+      <li><a href="{{ site.navigation.cta.href | withBase(site.basePath) }}" class="btn btn-nav">{{ site.navigation.cta.label }}</a></li>
       <li>
         <button class="theme-toggle" id="themeToggle" aria-label="{{ site.navigation.themeToggleAriaLabel }}">
           <span class="theme-icon sun">☀️</span>

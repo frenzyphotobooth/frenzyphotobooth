@@ -18,7 +18,7 @@ scripts:
 <section class="section gallery-page">
   <div class="container">
     <div class="gallery-page-header">
-      <a href="/#gallery" class="gallery-back-link" id="galleryBackLink">← Back to Categories</a>
+      <a href="{{ '/#gallery' | withBase(site.basePath) }}" class="gallery-back-link" id="galleryBackLink">← Back to Categories</a>
       <h1 class="section-title">{{ category.title }} <span class="gradient-text">Photos</span></h1>
       <p class="section-desc">{{ category.description }}</p>
     </div>
@@ -38,7 +38,7 @@ scripts:
 <script>
   window.FRENZY_GALLERY_WEBAPP_URL = "{{ env.galleryWebAppUrl }}";
 </script>
-<script src="/js/features/category-gallery.js"></script>
+<script src="{{ '/js/features/category-gallery.js' | withBase(site.basePath) }}"></script>
 
 <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Photo viewer">
   <div class="gallery-lightbox-content">
