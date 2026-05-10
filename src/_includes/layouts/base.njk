@@ -8,20 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="{{ '/styles.css' | withBase(site.basePath) }}">
 </head>
 <body{% if pageClass %} class="{{ pageClass }}"{% endif %}>
   {% include "partials/nav.njk" %}
   {{ content | safe }}
   {% if not hideFloatingQuote %}
-  <a href="{{ site.navigation.cta.href }}" class="btn btn-primary floating-quote-btn" aria-label="{{ site.navigation.cta.label }}">
+  <a href="{{ site.navigation.cta.href | withBase(site.basePath) }}" class="btn btn-primary floating-quote-btn" aria-label="{{ site.navigation.cta.label }}">
     {{ site.navigation.cta.label }}
   </a>
   {% endif %}
   {% include "partials/footer.njk" %}
-  <script src="/js/features/ui/floating-quote.js"></script>
+  <script src="{{ '/js/features/ui/floating-quote.js' | withBase(site.basePath) }}"></script>
   {% for script in scripts %}
-  <script src="{{ script }}"></script>
+  <script src="{{ script | withBase(site.basePath) }}"></script>
   {% endfor %}
 </body>
 </html>

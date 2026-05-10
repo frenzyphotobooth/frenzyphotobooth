@@ -2,8 +2,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo">
-          <img src="{{ site.brand.logoSrc }}" alt="{{ site.brand.logoAlt }}" class="logo-img">
+        <a href="{{ '/' | withBase(site.basePath) }}" class="logo">
+          <img src="{{ site.brand.logoSrc | withBase(site.basePath) }}" alt="{{ site.brand.logoAlt }}" class="logo-img">
           <span class="logo-text">{{ site.brand.name }} <span class="logo-accent">{{ site.brand.accent }}</span></span>
         </a>
         <p>{{ site.brand.tagline }}</p>
@@ -12,7 +12,7 @@
         <h4>{{ site.footer.quickLinksTitle }}</h4>
         <ul>
           {% for item in site.footer.quickLinks %}
-          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+          <li><a href="{{ item.href | withBase(site.basePath) }}">{{ item.label }}</a></li>
           {% endfor %}
         </ul>
       </div>

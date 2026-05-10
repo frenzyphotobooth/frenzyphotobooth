@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get a Quote | Frenzy Photobooth</title>
-  <meta name="description" content="Get a quote from Frenzy Photobooth for your event in Denver. Share your event details and we will reply with pricing and availability.">
+  <title>Birthday Photos | Frenzy Photobooth</title>
+  <meta name="description" content="Fun birthday captures and party moments.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,86 +49,42 @@
   </div>
 </nav>
 
-    <section class="section booking" id="get-quote">
-    <div class="container">
-      <div class="section-header">
-        <h1 class="section-title">Get a <span class="gradient-text">Quote</span></h1>
-        <p class="section-desc">Tell us about your event and we will get back to you within 24 hours with availability and pricing.</p>
-      </div>
-      <div class="booking-grid">
-        <div class="booking-info">
-          <h2 class="section-title">Tell Us About Your Event</h2>
-          <p>Use the form and share your date, location, and event details. We will follow up with a custom quote.</p>
-        </div>
-        <div class="booking-form-wrapper">
-          <div class="form-container custom-form">
-            <form id="bookingForm" novalidate>
-              <div class="form-group">
-                <label for="form-name">Name <span class="required">*</span></label>
-                <input type="text" id="form-name" name="name" required placeholder="Your full name">
-              </div>
-              <div class="form-group">
-                <label for="form-email">Email <span class="required">*</span></label>
-                <input type="email" id="form-email" name="email" required placeholder="you@example.com">
-              </div>
-              <div class="form-group">
-                <label for="form-phone">Phone <span class="required">*</span></label>
-                <input type="tel" id="form-phone" name="phone" required placeholder="(720) 000-0000">
-              </div>
-              <div class="form-group">
-                <label for="form-date">Event Date <span class="required">*</span></label>
-                <input type="date" id="form-date" name="event_date" required>
-              </div>
-              <div class="form-group">
-                <label for="form-event-type">Event Type <span class="required">*</span></label>
-                <select id="form-event-type" name="event_type" required>
-                  <option value="" selected disabled>Choose event type</option>
-                  <option value="Birthday party">Birthday party</option>
-                  <option value="Wedding">Wedding</option>
-                  <option value="Corporate Event">Corporate Event</option>
-                  <option value="Private Party">Private Party</option>
-                  <option value="School Event">School Event</option>
-                  <option value="Other / Not listed">Other / Not listed</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="form-message">Message <span class="required">*</span></label>
-                <textarea id="form-message" name="message" rows="5" required placeholder="Event type, venue/city, guest count, and preferred package"></textarea>
-              </div>
-              <div id="formStatus" class="form-status" hidden></div>
-              <button type="submit" class="btn btn-primary btn-block btn-submit">Send Message</button>
-            </form>
-          </div>
-        </div>
-        <div class="booking-contact">
-          <div class="contact-details">
-            <div class="contact-item">
-              <span class="contact-icon">📧</span>
-              <div>
-                <h4>Email</h4>
-                <p>info.frenzyphotobooth@gmail.com</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">📞</span>
-              <div>
-                <h4>Phone</h4>
-                <p>(000) 000-0000</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">⏰</span>
-              <div>
-                <h4>Response Time</h4>
-                <p>Within 24 hours</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="section gallery-page">
+  <div class="container">
+    <div class="gallery-page-header">
+      <a href="/frenzy-photobooth/#gallery" class="gallery-back-link" id="galleryBackLink">← Back to Categories</a>
+      <h1 class="section-title">Birthday <span class="gradient-text">Photos</span></h1>
+      <p class="section-desc">Fun birthday captures and party moments.</p>
     </div>
-  </section>
 
+    <div
+      class="gallery-grid gallery-category-photos"
+      id="driveCategoryGrid"
+      data-category-slug="birthday"
+      data-drive-folder-id="1J0S3ykJAtxrG5gmRNOZl3o19CN4LNJZb"
+      data-category-title="Birthday"
+      data-drive-fallback-url="https://drive.google.com/drive/folders/1J0S3ykJAtxrG5gmRNOZl3o19CN4LNJZb?usp=sharing">
+      <p class="gallery-empty">Loading photos...</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.FRENZY_GALLERY_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbx5nbnLqEYK7i8Ch0VJKEV7L7w8UQTR1DsH_vroGfKQEn4POBqkj0DRztj-0PX_IYUiQg/exec";
+</script>
+<script src="/frenzy-photobooth/js/features/category-gallery.js"></script>
+
+<dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Photo viewer">
+  <div class="gallery-lightbox-content">
+    <button type="button" class="gallery-lightbox-close" aria-label="Close photo viewer">×</button>
+    <img class="gallery-lightbox-image" src="" alt="">
+  </div>
+</dialog>
+
+  
+  <a href="/frenzy-photobooth/get-quote" class="btn btn-primary floating-quote-btn" aria-label="Get a Quote">
+    Get a Quote
+  </a>
   
   <footer class="footer">
   <div class="container">
@@ -196,8 +152,6 @@
 
   <script src="/frenzy-photobooth/js/features/ui/floating-quote.js"></script>
   
-  <script src="/frenzy-photobooth/js/lib/config-utils.js"></script>
-  
   <script src="/frenzy-photobooth/js/features/ui/theme.js"></script>
   
   <script src="/frenzy-photobooth/js/features/ui/navbar-scroll.js"></script>
@@ -206,15 +160,7 @@
   
   <script src="/frenzy-photobooth/js/features/ui.js"></script>
   
-  <script src="/frenzy-photobooth/js/features/contact/form-validation.js"></script>
-  
-  <script src="/frenzy-photobooth/js/features/contact/form-ui.js"></script>
-  
-  <script src="/frenzy-photobooth/js/features/contact/form-submission.js"></script>
-  
-  <script src="/frenzy-photobooth/js/features/booking-form.js"></script>
-  
-  <script src="/frenzy-photobooth/js/core/get-quote.js"></script>
+  <script src="/frenzy-photobooth/js/core/main.js"></script>
   
 </body>
 </html>

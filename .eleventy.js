@@ -1,4 +1,16 @@
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addFilter("withBase", (url, basePath = "") => {
+    if (typeof url !== "string" || url.length === 0) return url;
+    if (/^(?:[a-z]+:)?\/\//i.test(url) || url.startsWith("mailto:") || url.startsWith("tel:")) {
+      return url;
+    }
+
+    const normalizedBase = basePath && basePath !== "/" ? basePath.replace(/\/+$/, "") : "";
+    if (!normalizedBase) return url;
+    if (!url.startsWith("/")) return `${normalizedBase}/${url}`;
+    return `${normalizedBase}${url}`;
+  });
+
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "js": "js" });
   eleventyConfig.addPassthroughCopy({ "styles": "styles" });

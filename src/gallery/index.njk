@@ -18,9 +18,9 @@ scripts:
     </div>
     <div class="gallery-grid gallery-category-grid">
       {% for category in photoCategories %}
-      <a class="gallery-item gallery-category-card" href="/gallery/{{ category.slug }}/" aria-label="View {{ category.title }} photos">
+      <a class="gallery-item gallery-category-card" href="{{ ('/gallery/' + category.slug + '/') | withBase(site.basePath) }}" aria-label="View {{ category.title }} photos">
         <div class="gallery-media">
-          <img src="/{{ category.coverImage }}" alt="{{ category.title }} photo gallery cover" loading="lazy" decoding="async">
+          <img src="{{ ('/' + category.coverImage) | withBase(site.basePath) }}" alt="{{ category.title }} photo gallery cover" loading="lazy" decoding="async">
         </div>
         <div class="gallery-meta">
           <h4>{{ category.title }}</h4>
