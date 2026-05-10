@@ -861,6 +861,56 @@
   border-color: #d9d9e6;
 }
 
+/* ===== THEME PREVIEW ===== */
+.theme-preview {
+  background: var(--bg);
+}
+
+.theme-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.theme-option-card {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theme-option-swatch {
+  height: 74px;
+  border-radius: 12px;
+}
+
+.theme-option-card h4 {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+.theme-option-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.theme-option-chips span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.theme-option-apply {
+  width: 100%;
+}
+
 [data-theme="light"] .gallery-badge {
   color: #52525b;
   border-color: #d9d9e6;
