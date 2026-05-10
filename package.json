@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy"
+    "build": "ELEVENTY_ENV=production eleventy",
+    "build:gh-pages": "SITE_BASE_PATH=/frenzy-photobooth npm run build",
+    "build:domain": "SITE_BASE_PATH='' npm run build"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"

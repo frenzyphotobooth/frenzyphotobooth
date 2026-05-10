@@ -1,13 +1,20 @@
 (function () {
   const webAppUrl = window.FRENZY_GALLERY_WEBAPP_URL || '';
+  const basePath = (window.FRENZY_BASE_PATH || '').replace(/\/+$/, '');
   const grid = document.getElementById('driveCategoryGrid');
   const backLink = document.getElementById('galleryBackLink');
   if (!grid) return;
 
+  function withBase(path) {
+    if (!basePath) return path;
+    if (path.startsWith('/')) return `${basePath}${path}`;
+    return `${basePath}/${path}`;
+  }
+
   if (backLink) {
     backLink.addEventListener('click', (event) => {
       event.preventDefault();
-      const fallbackHref = backLink.getAttribute('href') || '/#gallery';
+      const fallbackHref = backLink.getAttribute('href') || withBase('/#gallery');
       let referrerUrl = null;
       try {
         referrerUrl = document.referrer ? new URL(document.referrer) : null;
@@ -18,10 +25,15 @@
       const sameOriginReferrer = referrerUrl && referrerUrl.origin === window.location.origin;
       const referrerIsHome =
         sameOriginReferrer &&
-        (referrerUrl.pathname === '/' || referrerUrl.pathname === '/index.html');
+        (
+          referrerUrl.pathname === '/' ||
+          referrerUrl.pathname === '/index.html' ||
+          referrerUrl.pathname === `${basePath}/` ||
+          referrerUrl.pathname === `${basePath}/index.html`
+        );
 
       if (referrerIsHome) {
-        window.location.href = '/#gallery';
+        window.location.href = withBase('/#gallery');
         return;
       }
       if (window.history.length > 1 && referrerUrl) {

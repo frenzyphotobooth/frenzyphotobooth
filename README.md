@@ -33,6 +33,18 @@ npm run build
 ```
 
 Output is generated in `_site/`.
+This build runs with `ELEVENTY_ENV=production` so internal URLs are generated for the GitHub Pages project path.
+
+### Build targets
+
+- GitHub Pages project URL (`...github.io/frenzy-photobooth`):
+  ```bash
+  npm run build:gh-pages
+  ```
+- Custom domain (`www.frenzyphotobooth.com`):
+  ```bash
+  npm run build:domain
+  ```
 
 ## Drive-Powered Photo Gallery
 
