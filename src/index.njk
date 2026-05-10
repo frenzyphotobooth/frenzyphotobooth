@@ -23,6 +23,7 @@ scripts:
   - /js/features/gallery/desktop.js
   - /js/features/gallery/mobile.js
   - /js/features/gallery.js
+  - /js/features/theme-preview.js
   - /js/core/main.js
 ---
   <!-- Hero Section -->
@@ -275,6 +276,18 @@ scripts:
   <script>
     window.FRENZY_DRIVE_API_KEY = "{{ env.driveApiKey }}";
   </script>
+
+  <!-- Theme Preview -->
+  <section class="section theme-preview" id="theme-preview">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Branding</p>
+        <h2 class="section-title">Gradient <span class="gradient-text">Preview</span></h2>
+        <p class="section-desc">Compare visual styles and apply one live on this page.</p>
+      </div>
+      <div class="theme-options-grid" id="themeOptionsGrid"></div>
+    </div>
+  </section>
 
   <!-- Testimonials Section -->
   <section class="section testimonials" id="testimonials">

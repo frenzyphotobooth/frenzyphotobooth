@@ -135,6 +135,13 @@
   text-shadow: none;
 }
 
+/* Keep hero copy readable in dark mode even when custom gradient themes are applied. */
+[data-theme="dark"] .hero-tagline {
+  color: #f5f3ff;
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(15,23,42,0.28);
+}
+
 [data-theme="light"] .btn-nav {
   background: rgba(255,255,255,0.86);
   border: 1px solid rgba(15,23,42,0.18);
