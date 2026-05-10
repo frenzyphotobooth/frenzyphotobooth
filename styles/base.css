@@ -60,6 +60,12 @@
 [data-theme="light"] .logo,
 [data-theme="light"] .nav-toggle span { color: var(--text-heading); }
 [data-theme="light"] .nav-toggle span { background: var(--text-heading); }
+[data-theme="light"] body.page-home .navbar .nav-toggle span {
+  background: #ffffff;
+}
+[data-theme="light"] body.page-home .navbar.scrolled .nav-toggle span {
+  background: #111827;
+}
 [data-theme="light"] .navbar {
   background: transparent;
   border-bottom: none;
