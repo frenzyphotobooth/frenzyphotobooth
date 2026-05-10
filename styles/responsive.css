@@ -54,6 +54,24 @@
   color: #ffffff;
 }
 
+@media (max-width: 968px) {
+  [data-theme="light"] body.page-home .navbar .nav-toggle span {
+    background: #ffffff;
+  }
+
+  [data-theme="light"] body.page-home .navbar.scrolled .nav-toggle span {
+    background: #111827;
+  }
+
+  [data-theme="light"] body.page-home .navbar .nav-links.active a:not(.btn) {
+    color: #3f3f46;
+  }
+
+  [data-theme="light"] body.page-home .navbar .nav-links.active a:not(.btn):hover {
+    color: #18181b;
+  }
+}
+
 .floating-quote-btn {
   display: none;
 }
