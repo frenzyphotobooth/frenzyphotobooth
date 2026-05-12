@@ -925,6 +925,7 @@
 /* ===== THEME PREVIEW ===== */
 .theme-preview {
   background: var(--bg);
+  display: none;
 }
 
 .theme-options-grid {
