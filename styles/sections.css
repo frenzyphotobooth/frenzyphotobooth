@@ -80,13 +80,7 @@
 .feature p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; }
 
 /* ===== SERVICES ===== */
-.services {
-  background: linear-gradient(180deg, #f5f3fa 0%, #efedf6 100%);
-}
-
-.services .section-tag { color: #6a2eea; border-color: rgba(106, 46, 234, 0.25); background: rgba(106, 46, 234, 0.08); }
-.services .section-title { color: #10101a; }
-.services .section-desc { color: #3e3e54; }
+.services { background: linear-gradient(180deg, var(--bg) 0%, #0d0d14 100%); }
 
 .services-grid {
   display: grid;
