@@ -35,7 +35,7 @@ module.exports = {
     contactTitle: "Contact Us",
     contactItems: [
       "info.frenzyphotobooth@gmail.com",
-      "(000) 000-0000",
+      "(720) 255-1369",
     ],
     socialLinks: [
       {
