@@ -34,7 +34,7 @@ jobs:
 
       - name: Build preview site
         env:
-          PREVIEW_BASE_PATH: /frenzyphotobooth-pr-${{ github.event.pull_request.number }}
+          PREVIEW_BASE_PATH: /${{ github.event.repository.name }}/frenzyphotobooth-pr-${{ github.event.pull_request.number }}
         run: SITE_BASE_PATH="$PREVIEW_BASE_PATH" npm run build
 
       - name: Deploy preview to gh-pages
@@ -53,7 +53,7 @@ jobs:
           header: pr-preview-url
           message: |
             Preview is ready and auto-updated for each new commit:
-            https://${{ github.repository_owner }}.github.io/frenzyphotobooth-pr-${{ github.event.pull_request.number }}/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/frenzyphotobooth-pr-${{ github.event.pull_request.number }}/
 
   cleanup-preview:
     if: github.event.action == 'closed'
