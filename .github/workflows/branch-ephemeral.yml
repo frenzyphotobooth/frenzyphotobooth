@@ -1,0 +1,99 @@
+name: PR Preview Deploy
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build preview site
+        env:
+          PREVIEW_BASE_PATH: /frenzyphotobooth-pr-${{ github.event.pull_request.number }}
+        run: SITE_BASE_PATH="$PREVIEW_BASE_PATH" npm run build
+
+      - name: Deploy preview to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          destination_dir: frenzyphotobooth-pr-${{ github.event.pull_request.number }}
+          keep_files: true
+          force_orphan: false
+
+      - name: Comment preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview-url
+          message: |
+            Preview is ready and auto-updated for each new commit:
+            https://${{ github.repository_owner }}.github.io/frenzyphotobooth-pr-${{ github.event.pull_request.number }}/
+
+  cleanup-preview:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Remove preview directory
+        run: |
+          if [ ! -d gh-pages ]; then
+            echo "gh-pages branch does not exist yet. Nothing to clean."
+            exit 0
+          fi
+          PREVIEW_DIR="gh-pages/frenzyphotobooth-pr-${{ github.event.pull_request.number }}"
+          if [ -d "$PREVIEW_DIR" ]; then
+            rm -rf "$PREVIEW_DIR"
+            echo "removed=true" >> "$GITHUB_ENV"
+          else
+            echo "Preview directory not found. Nothing to clean."
+            echo "removed=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Commit and push cleanup
+        if: env.removed == 'true'
+        run: |
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: remove preview for PR #${{ github.event.pull_request.number }}"
+          git push origin gh-pages
+
+      - name: Comment cleanup result
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview-url
+          message: |
+            Preview cleaned up for PR #${{ github.event.pull_request.number }} because it was closed.
