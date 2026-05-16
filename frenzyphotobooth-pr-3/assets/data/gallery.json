@@ -1,0 +1,106 @@
+[
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-01.jpg",
+    "thumb": "assets/posters/event-01.jpg",
+    "alt": "Birthday photobooth group pose",
+    "title": "Birthday Celebration"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-02.jpg",
+    "thumb": "assets/posters/event-02.jpg",
+    "alt": "Corporate event photobooth setup",
+    "title": "Corporate Event"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-03.jpg",
+    "thumb": "assets/posters/event-03.jpg",
+    "alt": "Wedding reception photobooth moments",
+    "title": "Wedding Reception"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-04.jpg",
+    "thumb": "assets/posters/event-04.jpg",
+    "alt": "Graduation celebration photobooth capture",
+    "title": "Graduation Party"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-01.jpg",
+    "thumb": "assets/posters/event-01.jpg",
+    "alt": "Open-Air Booth Setup",
+    "title": "Open-Air Booth Setup"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-02.jpg",
+    "thumb": "assets/posters/event-02.jpg",
+    "alt": "Reception Dance Floor Moments",
+    "title": "Reception Dance Floor Moments"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-03.jpg",
+    "thumb": "assets/posters/event-03.jpg",
+    "alt": "Friends + Family Candid",
+    "title": "Friends + Family Candid"
+  },
+  {
+    "type": "photo",
+    "sourceType": "local",
+    "src": "assets/posters/event-04.jpg",
+    "thumb": "assets/posters/event-04.jpg",
+    "alt": "Branded Event Backdrop",
+    "title": "Branded Event Backdrop"
+  },
+  {
+    "type": "video",
+    "sourceType": "local",
+    "src": "assets/videos/home-hero-0.mp4",
+    "title": "Highlight Reel 1 (Portrait)",
+    "orientation": "portrait",
+    "aspectRatio": "9 / 16"
+  },
+  {
+    "type": "video",
+    "sourceType": "youtube",
+    "videoId": "EsRnfCA5occ",
+    "thumb": "https://img.youtube.com/vi/EsRnfCA5occ/hqdefault.jpg",
+    "title": "Event Highlight Reel",
+    "aspectRatio": "16 / 9"
+  },
+  {
+    "type": "video",
+    "sourceType": "local",
+    "src": "assets/videos/home-hero.mp4",
+    "title": "Booth Setup Showcase",
+    "aspectRatio": "16 / 9"
+  },
+  {
+    "type": "video",
+    "sourceType": "local",
+    "src": "assets/videos/home-hero-2.mp4",
+    "title": "Highlight Reel 2 (Portrait)",
+    "orientation": "portrait",
+    "aspectRatio": "9 / 16"
+  },
+  {
+    "type": "video",
+    "sourceType": "drive",
+    "src": "",
+    "thumb": "assets/posters/event-02.jpg",
+    "title": "Google Drive Video (Add URL)",
+    "description": "Set src to a public Google Drive preview URL to enable playback.",
+    "aspectRatio": "16 / 9"
+  }
+]
