@@ -20,7 +20,7 @@
         <h4>{{ site.footer.contactTitle }}</h4>
         <ul>
           {% for item in site.footer.contactItems %}
-          <li>{{ item }}</li>
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
           {% endfor %}
         </ul>
         <div class="social-links" aria-label="Social media links">

@@ -34,8 +34,8 @@ module.exports = {
     ],
     contactTitle: "Contact Us",
     contactItems: [
-      "info.frenzyphotobooth@gmail.com",
-      "(720) 255-1369",
+      { label: "info.frenzyphotobooth@gmail.com", href: "mailto:info.frenzyphotobooth@gmail.com" },
+      { label: "(720) 255-1369", href: "tel:+17202551369" },
     ],
     socialLinks: [
       {
